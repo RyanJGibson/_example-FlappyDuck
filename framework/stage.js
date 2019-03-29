@@ -36,8 +36,8 @@ define(function(require) {
 		this.oParent.oStage = new PIXI.Container();
 		$("#gameCanvas").append(this.renderer.view);
 		
-		this.oParent.devText = new PIXI.Text("Dev Text", {font:"20px Verdana, Geneva, sans-serif", fill:"#000000"});
-		this.oParent.arText = new PIXI.Text("ar Text", {font:"20px Verdana, Geneva, sans-serif", fill:"#000000"});
+		this.oParent.devText = new PIXI.Text("Dev Text", {fontFamily:"Verdana, Geneva, sans-serif", fontSize:"20", fill:"#000000"});
+		this.oParent.arText = new PIXI.Text("ar Text", {fontFamily:"Verdana, Geneva, sans-serif", fontSize:"20", fill:"#000000"});
 		
 		this.oParent.oStage.addChild(this.oParent.devText);
 		this.oParent.oStage.addChild(this.oParent.arText);
