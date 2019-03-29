@@ -1,6 +1,7 @@
 define(function(require) {
 	var PIXI = require('PIXI');
 	var FluidElement = require('FluidElement');
+	var AssetHandler = require('AssetHandler');
 	var Stage = {};
 
 	//simple stage always retains X Y ratio of Canvas
@@ -51,7 +52,20 @@ define(function(require) {
 		window.addEventListener('resize', function () {
 			this.Resize();
 		}.bind(this));
-		
+
+		this.bFocus = true;
+
+		window.addEventListener("focus", function(event) { 
+			console.log('window gained focus');
+			//this.Draw();
+			this.bFocus = true;
+			AssetHandler.UnMuteAll();
+		}.bind(this), false);
+		window.addEventListener("blur", function(event) { 
+			console.log('window lost focus');
+			this.bFocus = false;
+			AssetHandler.MuteAll();
+		}.bind(this), false);
 		
 	};
 	
@@ -516,7 +530,10 @@ define(function(require) {
 			}
 			this.renderer.render(this.oParent.oStage);
 			window.requestAnimationFrame(function(){
-				this.Draw();
+				//console.log('ok: ' +this.bFocus);
+				//if(this.bFocus){
+					this.Draw();
+				//}
 			}.bind(this));
 		//}.bind(this),1000/fps);
 	};
