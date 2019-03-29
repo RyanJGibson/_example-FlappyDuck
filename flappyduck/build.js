@@ -1,6 +1,6 @@
 ({
   paths: {
-     "PIXI": "../../../framework/pixi_v_3_0_1",
+     "PIXI": "../../../framework/pixi_v_4_3_2",
     "jQuery": "../../../framework/jquery",
 	"Tween":"../../../framework/TweenMax",
 	"Howler":"../../../framework/howler",
