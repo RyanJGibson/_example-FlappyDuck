@@ -37186,7 +37186,7 @@ define('Stage',['require','PIXI','FluidElement'],function(require) {
 		
 		console.log("nGameMaxWidth: " + nGameMaxWidth);
 		console.log("nGameMaxHeight: " + nGameMaxHeight);
-		var o = new Object();
+		var o = {};
 		o.nGameMaxWidth = nGameMaxWidth;
 		o.nGameMaxHeight = nGameMaxHeight;
 		this.nCanvasWidthRatio = nCanvasWidthRatio;
@@ -37337,7 +37337,7 @@ define('Stage',['require','PIXI','FluidElement'],function(require) {
 		
 		$(".stageInner").css("top", (window.innerHeight-nLargestHeight)/2);
 		
-		console.log("nLargestHeight: " + nLargestHeight)
+		console.log("nLargestHeight: " + nLargestHeight);
 		
 		this.oParent.arText.text = this.nARPerc;
 		
@@ -37351,7 +37351,6 @@ define('Stage',['require','PIXI','FluidElement'],function(require) {
 	Stage.AddFluidElement = function(oFluidElement){
     	console.log("AddFluidElement");
 
-    	var oFluidElement = oFluidElement;
 
     	var bFluidElementValid = true;
     	for(var i=0;i<this.aFluidElements.length;i++){
@@ -37555,9 +37554,11 @@ define('Stage',['require','PIXI','FluidElement'],function(require) {
 				this.go=true;
 			}
 			this.renderer.render(this.oParent.oStage);
-			window.requestAnimationFrame(function(){this.Draw()}.bind(this));
+			window.requestAnimationFrame(function(){
+				this.Draw();
+			}.bind(this));
 		//}.bind(this),1000/fps);
-	}
+	};
 	
 
 	
@@ -44519,10 +44520,9 @@ define('Trig',['require'],function(require) {
 	        return true;
 	    }
 		return false; // No collision
-	}
+	};
 
 
-	
 	return Trig;
 });
 
@@ -44588,11 +44588,10 @@ define('HandleXML',['require'],function (require) {
 		}
 		  
 		xhttp.onreadystatechange=function(){
-
 			if(xhttp.readyState==4){ //&& xhttp.status==200){
 				this.XMLLoaded(xhttp.responseXML);
 			}
-		}.bind(this)
+		}.bind(this);
 
 		xhttp.open("GET",filename, true);
 		xhttp.send();
@@ -46096,7 +46095,7 @@ define('AssetHandler',['require','PIXI','Howler'],function(require) {
 			var sPathOGG = sAudioPath + this.oJSON.root[1].audioFiles.audio[i].id['#text'] + ".ogg";
 			var sPathMP3 = sAudioPath + this.oJSON.root[1].audioFiles.audio[i].id['#text'] + ".mp3";
 			
-			var oPathObj = new Object();
+			var oPathObj = {};
 			oPathObj.aPaths = [sPathMP3,sPathOGG];
 			this.aAudioFiles.push(oPathObj);
 			
@@ -46156,6 +46155,8 @@ define('AssetHandler',['require','PIXI','Howler'],function(require) {
 		//console.log(sAssociativeArrayKey)
         this.aSoundsAssociativeArray[sAssociativeArrayKey] = oSound;
        	this.aSounds.push(oSound);
+
+       	var nPerc = 0;
      
         if(this.nCurrentSound < this.oJSON.root[1].audioFiles.audio.length-1){
         	this.nCurrentSound++;
@@ -46166,13 +46167,13 @@ define('AssetHandler',['require','PIXI','Howler'],function(require) {
         	//console.log(this.oJSON.root[1].audioFiles.audio.length);
 			
 			this.nTotalFilesLoaded++;
-			var nPerc = this.nTotalFilesLoaded / this.nTotalFiles;
+			nPerc = this.nTotalFilesLoaded / this.nTotalFiles;
 			//console.log("this.nTotalFilesLoaded: " + this.nTotalFilesLoaded + " / " + this.nTotalFiles);
 			this.fOnLoadProgress(nPerc);
 
         }else{
 			this.nTotalFilesLoaded++;
-			var nPerc = this.nTotalFilesLoaded / this.nTotalFiles;
+			nPerc = this.nTotalFilesLoaded / this.nTotalFiles;
 			//console.log("this.nTotalFilesLoaded: " + this.nTotalFilesLoaded + " / " + this.nTotalFiles);
 			this.fOnLoadProgress(nPerc);
         	console.log("All sounds loaded");
@@ -46395,7 +46396,7 @@ define('ButtonHelper',['require','PIXI','AssetHandler'],function (require) {
 			//console.log("mouseover: " + this.bIsDown);
 			this.bIsOver = true;
 			if(this.bIsDown){
-				return
+				return;
 			}
 			if(this.bRenderAsEnabled){
 				this.sprButton.texture = AssetHandler.GetTexture(this.sprOverRef);
@@ -46501,12 +46502,13 @@ define('HandleCookie',['require'],function (require) {
  
 	HandleCookie.CreateCookie = function(name,value,days) {
 		console.log("CreateCookie: " + name + " " + value);
+		var expires = "";
 		if (days) {
 			var date = new Date();
 			date.setTime(date.getTime()+(days*24*60*60*1000));
-			var expires = "; expires="+date.toGMTString();
+			expires = "; expires="+date.toGMTString();
 		}
-		else var expires = "";
+		
 		document.cookie = name+"="+value+expires+"; path=/";
 	};
 	
@@ -46779,7 +46781,7 @@ define('BisonLogo',['require','Stage','PIXI','AssetHandler','Tween','FluidElemen
 		//this.tPlay = new PIXI.Text("( TAP BISON TO START )", {font:"15px Verdana, Geneva, sans-serif", fill:"#000000"});
 		//
 		this.tPlay = new PIXI.Text("( TAP BISON TO START )", {fontFamily:"Verdana, Geneva, sans-serif", fontSize:"60px", fill:"#000000"});
-		this.tPlay.scale.x = this.tPlay.scale.y = .25;
+		this.tPlay.scale.x = this.tPlay.scale.y = 0.25;
 
 		this.conBisonContainer.addChild(this.tPlay);
 		this.tPlay.position.x = 87;
