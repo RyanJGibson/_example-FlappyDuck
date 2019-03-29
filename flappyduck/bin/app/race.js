@@ -238,27 +238,30 @@ define(function (require) {
 		var width = 256;
 		var nPipeStartX = 640;
 
+		var oTopPipe = {};
+		var oBottomPipe = {};
+
 		switch(nRan){
 			case 0:
 				//top
 				this.nCurrentPipe++;
-				var oTopPipe = new Pipe(this, this.cGameAssetContainer,this.nCurrentPipe,nPipeStartX,-110,width,nSize,true);
+				 oTopPipe = new Pipe(this, this.cGameAssetContainer,this.nCurrentPipe,nPipeStartX,-110,width,nSize,true);
 				this.aPipes.push(oTopPipe);
 			break;
 			case 1:
 				//bottom
 				this.nCurrentPipe++;
-				var oBottomPipe = new Pipe(this, this.cGameAssetContainer,this.nCurrentPipe,nPipeStartX,845 - nSize,width,nSize,false);
+				 oBottomPipe = new Pipe(this, this.cGameAssetContainer,this.nCurrentPipe,nPipeStartX,845 - nSize,width,nSize,false);
 				this.aPipes.push(oBottomPipe);
 			break;
 			case 2:
 			case 3:
 				//top and bottom
 				this.nCurrentPipe++;
-				var oTopPipe = new Pipe(this, this.cGameAssetContainer,this.nCurrentPipe,nPipeStartX,-110,width,nSize/1.8,true);
+				 oTopPipe = new Pipe(this, this.cGameAssetContainer,this.nCurrentPipe,nPipeStartX,-110,width,nSize/1.8,true);
 				this.aPipes.push(oTopPipe);
 				this.nCurrentPipe++;
-				var oBottomPipe = new Pipe(this, this.cGameAssetContainer,this.nCurrentPipe,nPipeStartX,845 - (nSize/1.8),width,nSize/1.6,false);
+				 oBottomPipe = new Pipe(this, this.cGameAssetContainer,this.nCurrentPipe,nPipeStartX,845 - (nSize/1.8),width,nSize/1.6,false);
 				this.aPipes.push(oBottomPipe);
 			break;
 		}
@@ -497,7 +500,6 @@ define(function (require) {
 			onComplete:function(){
 				this.DestroyAll();
 				this.oParent.EndGame();
-				
 			}.bind(this)
 		});
 	};

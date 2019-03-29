@@ -52,15 +52,14 @@ define(function (require) {
 		var oTweenAlpha = Tween.to(this.oDispObjContainer,0.2, 
 			{alpha:0,delay:0.4
 		});
-		var oTweenAlpha = Tween.to(this.oDispObjContainer.scale,0.2, 
+		var oTweenAlpha2 = Tween.to(this.oDispObjContainer.scale,0.2, 
 			{x:2.2,y:2.2,delay:0.4
 		});
 		var oTweenScale = Tween.to(this.oDispObjContainer.scale,0.3, 
 			{x:1.6,y:1.6,ease:Back.easeOut
 		});
 		
-		
-	} 
+	};
 
 	Star.prototype.UpdateXY = function(){
 		this.nX += this.nVX;
