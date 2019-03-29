@@ -174,7 +174,7 @@ define(function(require) {
 		}
 		
 		
-		var mc = new PIXI.extras.MovieClip(aTexturesArray);
+		var mc = new PIXI.extras.AnimatedSprite(aTexturesArray);
 		return(mc);
 	};
 	
