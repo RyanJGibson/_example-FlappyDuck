@@ -245,17 +245,27 @@ define(function(require) {
 		s = (-s1_y * (p0_x - p2_x) + s1_x * (p0_y - p2_y)) / (-s2_x * s1_y + s1_x * s2_y);
 	    t = ( s2_x * (p0_y - p2_y) - s2_y * (p0_x - p2_x)) / (-s2_x * s1_y + s1_x * s2_y);
 
+	    var oReturnObj = {};
+
+	    oReturnObj.bCollision = false;
+	    oReturnObj.nX = 0;
+	    oReturnObj.nY = 0;
+
 	    //if (s >= 0 && s <= 1 && t >= 0 && t <= 1)
 	    if (s > 0.001 && s < 0.999 && t > 0.001 && t < 0.999)
 		{
-	        // Collision detected- we can optionally return X and Y to get precise point of collision
-			var intX = p0_x + (t * s1_x);
-			var intY = p0_y + (t * s1_y);
+	        // Collision detected
+			var nX = p0_x + (t * s1_x);
+			var nY = p0_y + (t * s1_y);
 			//console.log(intX + " " + intY);
+			oReturnObj.bCollision = true;
+			oReturnObj.nX = nX;
+			oReturnObj.nY = nY;
 
-	        return true;
 	    }
-		return false; // No collision
+
+
+		return oReturnObj;
 	}
 
 
