@@ -50,7 +50,7 @@ define(function(require) {
 		this.aPIXILoaderFiles = [];
 		
 		console.log(">> Images");
-		for(var i=0;i<this.oJSON.root[1].images.image.length;i++){
+		for(let i=0;i<this.oJSON.root[1].images.image.length;i++){
 			console.log(i + " " + this.oJSON.root[1].images.image[i].id['#text']);
 			this.aPIXILoaderNames.push(this.oJSON.root[1].images.image[i].id['#text']);
 			this.aPIXILoaderFiles.push(sImagePath + this.oJSON.root[1].images.image[i].id['#text'] + ".png");
@@ -58,7 +58,7 @@ define(function(require) {
 		}
 		
 		console.log(">> bitmap fonts");
-		for(var i=0;i<this.oJSON.root[1].bitmapFonts.font.length;i++){
+		for(let i=0;i<this.oJSON.root[1].bitmapFonts.font.length;i++){
 			console.log(i + " " + this.oJSON.root[1].bitmapFonts.font[i].id['#text']);
 			this.aPIXILoaderNames.push(this.oJSON.root[1].bitmapFonts.font[i].id['#text']);
 			this.aPIXILoaderFiles.push(sBitmapFontPath + this.oJSON.root[1].bitmapFonts.font[i].id['#text']);
@@ -66,12 +66,12 @@ define(function(require) {
 		}
 		
 		console.log(">> audio files");
-		for(var i=0;i<this.oJSON.root[1].audioFiles.audio.length;i++){
+		for(let i=0;i<this.oJSON.root[1].audioFiles.audio.length;i++){
 			console.log(i + " " + this.oJSON.root[1].audioFiles.audio[i].id['#text']);
 			var sPathOGG = sAudioPath + this.oJSON.root[1].audioFiles.audio[i].id['#text'] + ".ogg";
 			var sPathMP3 = sAudioPath + this.oJSON.root[1].audioFiles.audio[i].id['#text'] + ".mp3";
 			
-			var oPathObj = new Object();
+			var oPathObj = {};
 			oPathObj.aPaths = [sPathMP3,sPathOGG];
 			this.aAudioFiles.push(oPathObj);
 			
@@ -81,7 +81,7 @@ define(function(require) {
 		console.log("this.nTotalFiles> " + this.nTotalFiles);
 		
 		this.oLoader = PIXI.loader;
-		for(var i=0;i<this.aPIXILoaderFiles.length;i++){
+		for(let i=0;i<this.aPIXILoaderFiles.length;i++){
 			this.oLoader.add(this.aPIXILoaderNames[i], this.aPIXILoaderFiles[i]);
 		}
 		
@@ -131,6 +131,8 @@ define(function(require) {
 		//console.log(sAssociativeArrayKey)
         this.aSoundsAssociativeArray[sAssociativeArrayKey] = oSound;
        	this.aSounds.push(oSound);
+
+       	var nPerc = 0;
      
         if(this.nCurrentSound < this.oJSON.root[1].audioFiles.audio.length-1){
         	this.nCurrentSound++;
@@ -141,13 +143,13 @@ define(function(require) {
         	//console.log(this.oJSON.root[1].audioFiles.audio.length);
 			
 			this.nTotalFilesLoaded++;
-			var nPerc = this.nTotalFilesLoaded / this.nTotalFiles;
+			nPerc = this.nTotalFilesLoaded / this.nTotalFiles;
 			//console.log("this.nTotalFilesLoaded: " + this.nTotalFilesLoaded + " / " + this.nTotalFiles);
 			this.fOnLoadProgress(nPerc);
 
         }else{
 			this.nTotalFilesLoaded++;
-			var nPerc = this.nTotalFilesLoaded / this.nTotalFiles;
+			nPerc = this.nTotalFilesLoaded / this.nTotalFiles;
 			//console.log("this.nTotalFilesLoaded: " + this.nTotalFilesLoaded + " / " + this.nTotalFiles);
 			this.fOnLoadProgress(nPerc);
         	console.log("All sounds loaded");

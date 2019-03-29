@@ -256,10 +256,9 @@ define(function(require) {
 	        return true;
 	    }
 		return false; // No collision
-	}
+	};
 
 
-	
 	return Trig;
 });
 

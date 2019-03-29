@@ -17,7 +17,7 @@ define(function (require) {
 
 		this.aClouds = [];
 
-		for(var i=0;i<8;i++){
+		for(let i=0;i<8;i++){
 			var oCloud ={};
 			oCloud.spr = AssetHandler.GetSprite("cloud0" + ( parseInt(Math.random()*4)+1 )  );
 			this.aClouds.push(oCloud);
