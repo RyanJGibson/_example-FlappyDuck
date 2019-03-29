@@ -147,7 +147,7 @@ define(function(require) {
 		
 		console.log("nGameMaxWidth: " + nGameMaxWidth);
 		console.log("nGameMaxHeight: " + nGameMaxHeight);
-		var o = new Object();
+		var o = {};
 		o.nGameMaxWidth = nGameMaxWidth;
 		o.nGameMaxHeight = nGameMaxHeight;
 		this.nCanvasWidthRatio = nCanvasWidthRatio;
@@ -298,7 +298,7 @@ define(function(require) {
 		
 		$(".stageInner").css("top", (window.innerHeight-nLargestHeight)/2);
 		
-		console.log("nLargestHeight: " + nLargestHeight)
+		console.log("nLargestHeight: " + nLargestHeight);
 		
 		this.oParent.arText.text = this.nARPerc;
 		
@@ -312,7 +312,6 @@ define(function(require) {
 	Stage.AddFluidElement = function(oFluidElement){
     	console.log("AddFluidElement");
 
-    	var oFluidElement = oFluidElement;
 
     	var bFluidElementValid = true;
     	for(var i=0;i<this.aFluidElements.length;i++){
@@ -516,9 +515,11 @@ define(function(require) {
 				this.go=true;
 			}
 			this.renderer.render(this.oParent.oStage);
-			window.requestAnimationFrame(function(){this.Draw()}.bind(this));
+			window.requestAnimationFrame(function(){
+				this.Draw();
+			}.bind(this));
 		//}.bind(this),1000/fps);
-	}
+	};
 	
 
 	

@@ -263,13 +263,11 @@ define(function(require) {
 			oReturnObj.nY = nY;
 
 	    }
-
-
 		return oReturnObj;
-	}
+	};
 
 
-	
+
 	return Trig;
 });
 

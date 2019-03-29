@@ -200,7 +200,7 @@ define(function (require) {
 		//this.tPlay = new PIXI.Text("( TAP BISON TO START )", {font:"15px Verdana, Geneva, sans-serif", fill:"#000000"});
 		//
 		this.tPlay = new PIXI.Text("( TAP BISON TO START )", {fontFamily:"Verdana, Geneva, sans-serif", fontSize:"60px", fill:"#000000"});
-		this.tPlay.scale.x = this.tPlay.scale.y = .25;
+		this.tPlay.scale.x = this.tPlay.scale.y = 0.25;
 
 		this.conBisonContainer.addChild(this.tPlay);
 		this.tPlay.position.x = 87;

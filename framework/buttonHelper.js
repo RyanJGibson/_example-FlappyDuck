@@ -75,7 +75,7 @@ define(function (require) {
 			//console.log("mouseover: " + this.bIsDown);
 			this.bIsOver = true;
 			if(this.bIsDown){
-				return
+				return;
 			}
 			if(this.bRenderAsEnabled){
 				this.sprButton.texture = AssetHandler.GetTexture(this.sprOverRef);
