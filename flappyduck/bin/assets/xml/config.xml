@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root>
+<root>
+
+
+	<paths>
+		<images>bin/assets/images/</images>
+		<bitmapFonts>bin/assets/bitmapfonts/</bitmapFonts>
+		<audio>bin/assets/audio/</audio>
+	</paths>
+	
+	<audioFiles>
+
+		<audio>
+			<id>flappy_music</id>
+		</audio>
+		<audio>
+			<id>angrybisonaudio</id>
+		</audio>
+
+		<audio>
+			<id>bop</id>
+		</audio>
+		<audio>
+			<id>click</id>
+		</audio>
+		<audio>
+			<id>ding</id>
+		</audio>
+		<audio>
+			<id>fail</id>
+		</audio>
+		<audio>
+			<id>quack</id>
+		</audio>
+		<audio>
+			<id>star</id>
+		</audio>
+		<audio>
+			<id>success</id>
+		</audio>
+		<audio>
+			<id>tada</id>
+		</audio>
+		<audio>
+			<id>uhoh</id>
+		</audio>
+		<audio>
+			<id>jump</id>
+		</audio>
+		<audio>
+			<id>quack-quack-oops</id>
+		</audio>
+		
+	
+		
+	</audioFiles>
+	
+	<bitmapFonts>
+		<font>
+			<id>Hat_red.fnt</id>
+		</font>
+		<font>
+			<id>Hat_white.fnt</id>
+		</font>
+	</bitmapFonts>
+
+	<images>
+		<image>
+			<id>ar</id>
+		</image>
+		<image>
+			<id>bison_logo_anim0001</id>
+		</image>
+		<image>
+			<id>bison_logo_anim0002</id>
+		</image>
+		<image>
+			<id>bison_logo_anim0003</id>
+		</image>
+		<image>
+			<id>bison_logo_anim0004</id>
+		</image>
+		<image>
+			<id>bison_logo_anim0005</id>
+		</image>
+		<image>
+			<id>bison_logo_anim0006</id>
+		</image>
+		<image>
+			<id>bison_logo_anim0007</id>
+		</image>
+		<image>
+			<id>bison_logo_text</id>
+		</image>
+		<image>
+			<id>backg</id>
+		</image>
+		<image>
+			<id>title_txt</id>
+		</image>
+		<image>
+			<id>btn_play_up</id>
+		</image>
+		<image>
+			<id>btn_play_over</id>
+		</image>
+		<image>
+			<id>btn_play_down</id>
+		</image>
+		<image>
+			<id>btn_again_up</id>
+		</image>
+		<image>
+			<id>btn_again_over</id>
+		</image>
+		<image>
+			<id>btn_again_down</id>
+		</image>
+		
+		<image>
+			<id>bison_button</id>
+		</image>
+		<image>
+			<id>txt_presents</id>
+		</image>
+		
+		<image>
+			<id>duck_face</id>
+		</image>
+		<image>
+			<id>duck_face2</id>
+		</image>
+		<image>
+			<id>duck_hair0001</id>
+		</image>
+		<image>
+			<id>duck_hair0002</id>
+		</image>
+		<image>
+			<id>duck_hair0003</id>
+		</image>
+		<image>
+			<id>duck_eye0001</id>
+		</image>
+		<image>
+			<id>duck_eye0002</id>
+		</image>
+		<image>
+			<id>duck_eye0003</id>
+		</image>
+		<image>
+			<id>duck_wing0001</id>
+		</image>
+		<image>
+			<id>duck_wing0002</id>
+		</image>
+		<image>
+			<id>duck_wing0003</id>
+		</image>
+		<image>
+			<id>duck_wing0004</id>
+		</image>
+		<image>
+			<id>duck_wing0005</id>
+		</image>
+		<image>
+			<id>duck_wing0006</id>
+		</image>
+		<image>
+			<id>duck_wing0007</id>
+		</image>
+		<image>
+			<id>duck_wing0008</id>
+		</image>
+		
+		<image>
+			<id>cloud01</id>
+		</image>
+		<image>
+			<id>cloud02</id>
+		</image>
+		<image>
+			<id>cloud03</id>
+		</image>
+		<image>
+			<id>cloud04</id>
+		</image>
+		<image>
+			<id>pipe_middle</id>
+		</image>
+		<image>
+			<id>pipe_end_down</id>
+		</image>
+		<image>
+			<id>pipe_end_up</id>
+		</image>
+		<image>
+			<id>star</id>
+		</image>
+		
+		
+	</images>
+	
+	
+</root>
+
+
+
+
+
+
+
+

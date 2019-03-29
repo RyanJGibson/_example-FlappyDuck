@@ -1,0 +1,44 @@
+html{
+
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	 
+	 height:100%;
+	 overflow: hidden;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color:#FF0000;
+	height:100%;
+	color:#000000;
+	font-family: Arial, Helvetica, sans-serif;
+	
+	-webkit-transition: background-color 1500ms ease-out 0s;
+    -moz-transition: background-color 1500ms ease-out 0s;
+    -o-transition: background-color 1500ms ease-out 0s;
+    transition: background-color 1500ms ease-out 0s;
+}
+
+div.stage{
+	width:100%;
+	height:100%;
+}
+
+/* stageInner width height and top dynamically set depedning on canvas and window dimensions */
+div.stageInner{
+	position:absolute;
+	top:0px;
+	bottom:0px;
+	background-color:#000000;
+	margin: 0 auto;
+	left:0;
+	right:0;
+	
+	-webkit-box-shadow: 0px 0px 81px 16px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 81px 16px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 81px 16px rgba(0,0,0,0.75);
+}
+
+
+
